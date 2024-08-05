@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Add Task</h1>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+    <main>
+        <form action="{{ url_for('add_task') }}" method="POST">
+            {{ form.hidden_tag() }}
+            <label for="title">Title:</label>
+            {{ form.title }}
+            <label for="description">Description:</label>
+            {{ form.description }}
+            <label for="status">Status:</label>
+            {{ form.status }}
+            <label for="assignee">Assignee:</label>
+            {{ form.assignee }}
+            {{ form.submit }}
+        </form>
+    </main>
+</body>
+</html>
